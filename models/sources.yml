@@ -1,15 +1,15 @@
 version: 2
 
 sources:
-  - name: googles_analytics_4
-    schema: google_analytics_4
+  - name: analytics4
+    schema: analytics4
     tables:
       - name: events_20210131
       
   - name: google_sheets
     schema: google_sheets
     tables:
-      - name: account_manager_region_mapping
+      - name: responsables_territoires
 
   - name: sales_database
     schema: sales_database
@@ -21,3 +21,21 @@ sources:
       - name: order_item
       - name: seller
       - name: user
+      
+  - name: airbnb
+    schema: airbnb
+    tables:
+      - name: listings
+   
+  - name: localbike
+    schema: localbike
+    tables:
+      - name: brands
+      - name: categories
+      - name: customers
+      - name: order_items
+      - name: orders
+      - name: products
+      - name: staffs
+      - name: stocks
+      - name: stores

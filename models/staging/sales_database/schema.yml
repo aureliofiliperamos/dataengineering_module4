@@ -40,7 +40,7 @@ models:
               to: ref('stg_sales_database__user')
               field: user_id
 
-  - name: stg_sales_database__order_item
+  - name: stg_sales_database_item
     description: "This model contains information about each item included in an order, including its price, quantity, and shipping cost."
     columns:
       - name: order_item_id
@@ -92,7 +92,7 @@ models:
             - unique
             - not_null
 
-  - name: stg_sales_database__user
+  - name: stg_sales_database_user
     description: "This model contains user-related information, including where they live."
     columns:
       - name: user_id

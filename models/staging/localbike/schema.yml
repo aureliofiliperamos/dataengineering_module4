@@ -1,0 +1,174 @@
+version: 2
+
+models:
+  - name: stg_localbike__brands
+    description: "This model contains information about the brands"
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+            - unique
+            - not_null
+      - name: brand_name
+        description: "Name of the brand."
+
+  - name: stg_localbike__categories
+    description: "This model contains information about the categories."
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category."
+        tests:
+            - unique
+            - not_null
+      - name: category_name
+        description: "Name of the category."
+
+  - name: stg_localbike__customers
+    description: "This model contains information about the customers."
+    columns:
+      - name: customer_id
+        description: "Primary key, unique identifier for each customer."
+        tests:
+            - unique
+            - not_null
+      - name: first_name
+        description: "First name of the customer."
+      - name: last_name
+        description: "Last name of the customer."
+      - name: phone
+        description: "Customer phone number."
+      - name: email
+        description: "Customer email"
+      - name: address
+        description: "Customer address" 
+      - name: city
+        description: "Location of the customer"
+      - name: state
+        description: "Customer state"
+      - name: zip_code
+        description: "Customer postal code"
+
+  - name: stg_localbike__order_items
+    description: "This model contains information about each item included in an order, including its price, quantity, and discount."
+    columns:
+      - name: order_id
+        description: "Foreign key linking the order to the order_items table."
+        tests:
+            - unique
+            - not_null
+      - name: item_id
+        description: "Primary key, unique identifier for each order."
+        tests:
+            - unique
+            - not_null
+      - name: product_id
+        description: "Foreign key linking the product to the order_items table."
+        tests:
+            - unique
+            - not_null
+      - name: item_quantity
+        description: "Total quantity per item"
+      - name: unit_price
+        description: "Unit price per item"
+      - name: discount
+        description: "Total discount per item"
+      - name: total_order_item_amount
+        description: "Total value of the quantity per item without de discount"
+
+  - name: stg_localbike__orders
+    description: "This model contains details about the orders."
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each order."
+        tests:
+            - unique
+            - not_null
+      - name: customer_id
+        description: "Foreign key linking the order to the customer table."
+      - name: order_status
+        description: "Status of the order"
+      - name: created_order_at
+        description: "Date when the order was created"
+      - name: required_order_at
+        description: "Date when the order was required"
+      - name: shipped_date_at
+        description: "Date when the order was shipped"
+      - name: store_id
+        description: "Foreign key linking the order to the store table"
+      - name: staff_id
+        description: "Foreign key linking the order to the staff table"
+
+  - name: stg_localbike__products
+    description: "This model contains details about the products."
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product."
+        tests:
+            - unique
+            - not_null
+      - name: product_name
+        description: "The name of each product"
+      - name: brand_id
+        description: "Foreign key linking the product to the brand table"
+      - name: category_id
+        description: "Foreign key linking the product to the category table"
+      - name: model_year
+        description: "Year of the product model"
+      - name: unit_price
+        description: "unit price for each product"
+
+  - name: stg_localbike__staffs
+    description: "This model contains details about the staff"
+    columns:
+      - name: staff_id
+        description: "Primary key, unique identifier for each staff"
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "First name of the staff element."
+      - name: last_name
+        description: "Last name of the staff element"
+      - name: email
+        description: "Staff email"
+      - name: phone
+        description: "Staff phone" 
+      - name: active
+        description: "?????"
+      - name: store_id
+        description: "Foreign key linking the staff to the store table"
+      - name: manager_id
+        description: "Foreign key linking the staff to the manager"
+
+  - name: stg_localbike__stocks
+    description: "This model contains information about the quantity of the stocks."
+    columns:
+      - name: store_id
+        description: "Foreign key linking the store to the stocks table."
+      - name: product_id
+        description: "Foreign key linking the product to the stocks table"
+      - name: stock_quantity
+        description: "Quantity of the stocks"
+  
+  - name: stg_localbike__stores
+    description: "This model contains information about the stores and its location"
+    columns:
+      - name: store_id
+        description: "Primary key, unique indentifier for each store"
+        tests:
+          - unique
+          - not_null
+      - name: store_name
+        description: "The name of each store"
+      - name: phone
+        description: "Phone number of the store"
+      - name: email
+        description: "Email of the store"
+      - name: address
+        description: "Store address"
+      - name: city
+        description: "Location of the store"
+      - name: state
+        description: "State where is located the store"
+      - name: zip_code
+        description: "Postal code of the store"
