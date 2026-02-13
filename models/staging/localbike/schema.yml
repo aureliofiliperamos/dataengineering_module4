@@ -35,17 +35,17 @@ models:
         description: "First name of the customer."
       - name: last_name
         description: "Last name of the customer."
-      - name: phone
+      - name: phone_number
         description: "Customer phone number."
       - name: email
         description: "Customer email"
-      - name: address
+      - name: street_address
         description: "Customer address" 
       - name: city
         description: "Location of the customer"
       - name: state
         description: "Customer state"
-      - name: zip_code
+      - name: postal_code
         description: "Customer postal code"
 
   - name: stg_localbike__order_items
@@ -72,8 +72,6 @@ models:
         description: "Unit price per item"
       - name: discount
         description: "Total discount per item"
-      - name: total_order_item_amount
-        description: "Total value of the quantity per item without de discount"
 
   - name: stg_localbike__orders
     description: "This model contains details about the orders."
@@ -87,11 +85,11 @@ models:
         description: "Foreign key linking the order to the customer table."
       - name: order_status
         description: "Status of the order"
-      - name: created_order_at
+      - name: order_date
         description: "Date when the order was created"
-      - name: required_order_at
+      - name: required_date
         description: "Date when the order was required"
-      - name: shipped_date_at
+      - name: shipped_date
         description: "Date when the order was shipped"
       - name: store_id
         description: "Foreign key linking the order to the store table"
@@ -131,7 +129,7 @@ models:
         description: "Last name of the staff element"
       - name: email
         description: "Staff email"
-      - name: phone
+      - name: phone_number
         description: "Staff phone" 
       - name: active
         description: "?????"
@@ -160,15 +158,15 @@ models:
           - not_null
       - name: store_name
         description: "The name of each store"
-      - name: phone
+      - name: phone_number
         description: "Phone number of the store"
       - name: email
         description: "Email of the store"
-      - name: address
+      - name: street_address
         description: "Store address"
       - name: city
         description: "Location of the store"
       - name: state
         description: "State where is located the store"
-      - name: zip_code
+      - name: postal_code
         description: "Postal code of the store"

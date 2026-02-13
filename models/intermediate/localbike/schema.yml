@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: int_localbike__order_items
+    description: "Détail des ventes enrichi avec calculs de revenus net/brut et infos produits."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: item_id
+        tests:
+          - not_null
+      - name: net_amount
+        description: "Revenu après remise."
+        tests:
+          - not_null
+
+  - name: int_localbike__orders
+    description: "Commandes enrichies avec les informations magasins et statuts."
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4]
+
+  - name: int_localbike__stock_performance
+    description: "Analyse de la disponibilité des stocks et valeur du capital immobilisé."
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: stock_quantity
+        tests:
+          - not_null
+      - name: inventory_status
+        tests:
+          - accepted_values:
+              values:
+                - OUT OF STOCK
+                - CRITICAL STOCK
+                - LOW STOCK
+                - ENOUGH STOCK
