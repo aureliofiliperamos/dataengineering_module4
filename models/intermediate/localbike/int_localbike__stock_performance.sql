@@ -22,7 +22,7 @@ WITH stocks AS
     FROM {{ ref('stg_localbike__brands') }}
     ),
 
-stock_perfomance AS 
+stock_performance AS 
     (
     SELECT s.store_id,
         s.product_id,
@@ -48,4 +48,4 @@ stock_perfomance AS
     )
 
 SELECT * 
-FROM stock_perfomance
+FROM stock_performance
