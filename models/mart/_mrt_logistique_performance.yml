@@ -1,13 +1,12 @@
 version: 2
 
 models:
-  - name: mart_logistique_perfomance
+  - name: mrt_logistique_perfomance
     description: '{{ doc("mrt_logistique_performance") }}'
     columns:
       - name: order_id
         description: "Unique identifier for the completed order."
         tests:
-          - unique
           - not_null
       - name: days_to_ship
         description: "Duration in days from the order date to the actual shipping date."

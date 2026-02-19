@@ -50,21 +50,23 @@ models:
 
   - name: stg_localbike__order_items
     description: "This model contains information about each item included in an order, including its price, quantity, and discount."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - item_id
     columns:
       - name: order_id
         description: "Foreign key linking the order to the order_items table."
         tests:
-            - unique
             - not_null
       - name: item_id
         description: "Primary key, unique identifier for each order."
         tests:
-            - unique
             - not_null
       - name: product_id
         description: "Foreign key linking the product to the order_items table."
         tests:
-            - unique
             - not_null
       - name: item_quantity
         description: "Total quantity per item"
@@ -79,8 +81,8 @@ models:
       - name: order_id
         description: "Primary key, unique identifier for each order."
         tests:
-            - unique
             - not_null
+            - unique
       - name: customer_id
         description: "Foreign key linking the order to the customer table."
       - name: order_status
@@ -102,8 +104,8 @@ models:
       - name: product_id
         description: "Primary key, unique identifier for each product."
         tests:
-            - unique
             - not_null
+            - unique
       - name: product_name
         description: "The name of each product"
       - name: brand_id
@@ -132,7 +134,7 @@ models:
       - name: phone_number
         description: "Staff phone" 
       - name: active
-        description: "?????"
+        description: "A flag (typically 1 for active, 0 for inactive) indicating if the staff member is currently employed."
       - name: store_id
         description: "Foreign key linking the staff to the store table"
       - name: manager_id

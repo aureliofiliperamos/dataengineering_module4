@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mart_stock_performance
+  - name: mrt_stock_performance
     description: '{{ doc("mrt_stock_and_sales") }}'
     columns:  
       - name: product_id
