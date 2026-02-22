@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mrt_sales_finance
+  - name: mrt_sales_and_revenues
     description: '{{ doc("mrt_sales_and_revenues") }}'
     columns:
       - name: order_id

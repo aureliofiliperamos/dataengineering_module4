@@ -24,7 +24,8 @@ models:
       - name: order_status
         tests:
           - accepted_values:
-              values: [1, 2, 3, 4]
+              arguments:
+                values: [1, 2, 3, 4]
 
   - name: int_localbike__stock_performance
     description: "Analysis of inventory availability and value of fixed capital."
@@ -38,8 +39,9 @@ models:
       - name: inventory_status
         tests:
           - accepted_values:
-              values:
-                - OUT OF STOCK
-                - CRITICAL STOCK
-                - LOW STOCK
-                - ENOUGH STOCK
+              arguments:
+                values:
+                  - OUT OF STOCK
+                  - CRITICAL STOCK
+                  - LOW STOCK
+                  - ENOUGH STOCK

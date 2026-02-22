@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mrt_logistique_perfomance
+  - name: mrt_logistique_performance
     description: '{{ doc("mrt_logistique_performance") }}'
     columns:
       - name: order_id
