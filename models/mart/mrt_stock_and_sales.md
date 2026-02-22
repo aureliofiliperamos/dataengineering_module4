@@ -1,7 +1,7 @@
 {% docs mart_stock_and_sales %}
 
 This model focuses on **Inventory Optimization** to prevent revenue loss due to stockouts.
-It combines real-time stock levels from `int_localbike__stock_perfomance` with historical sales volume.
+It combines real-time stock levels from `int_localbike__stock_and_sales` with historical sales volume.
 
 ### Inventory Status Logic:
 **OUT OF STOCK** If quantity = 0. Sales are impossible.
