@@ -10,6 +10,14 @@ models:
       - name: item_id
         tests:
           - not_null
+      - name: gross_amount
+        description: "Total income amount."
+        tests:
+          - not_null
+      - name: discount_amount
+        description: "Total discount amount."
+        tests:
+          - not_null
       - name: net_amount
         description: "Income after discount."
         tests:
