@@ -1,4 +1,4 @@
-{% docs mart_sales_and_revenue %}
+{% docs mrt_sales_and_revenues %}
 
 This model is the source for revenue optimization.
 It joins order items table with order table to provide a granular view of every transaction.
