@@ -17,15 +17,15 @@ models:
 
   - name: int_localbike__orders
     description: "Orders enhanced with store information and status details."
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "order_status IN (1, 2, 3, 4)"
     columns:
       - name: order_id
         tests:
           - not_null
       - name: order_status
-        tests:
-          - accepted_values:
-              arguments:
-                values: [1, 2, 3, 4]
 
   - name: int_localbike__stock_performance
     description: "Analysis of inventory availability and value of fixed capital."
